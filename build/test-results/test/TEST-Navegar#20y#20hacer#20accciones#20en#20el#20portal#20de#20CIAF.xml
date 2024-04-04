@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Navegar y hacer accciones en el portal de CIAF" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-04T18:05:28" hostname="jairolopez-HP-Laptop-14-cf2xxx" time="97.812">
+  <properties/>
+  <testcase name="Navegar al portal de la CIAF" classname="Navegar y hacer accciones en el portal de CIAF" time="97.812"/>
+  <system-out><![CDATA[
+Scenario Outline: Navegar al portal de la CIAF      ?[90m# src/test/resources/Features/FrameworkAuto.feature:6?[0m
+  ?[32mGiven ?[0m?[32mNavegar al portal https://www.ciaf.digital/?[0m ?[90m# steps.TestSteps.IngresarUrlHacerLogin()?[0m
+  ?[32mWhen ?[0m?[32mValidar la Lista de Roles?[0m                    ?[90m# steps.TestSteps.validateCheckoutPlans()?[0m
+  ?[32mAnd ?[0m?[32mIngresar a Faltas de Asistencia?[0m               ?[90m# steps.TestSteps.RevisarAsistencia()?[0m
+  ?[32mAnd ?[0m?[32mluego al programa de formacion?[0m                ?[90m# steps.TestSteps.RevisarProgramaFormacion()?[0m
+  ?[32mThen ?[0m?[32mBuscar Materia y Cerrar Sesion de usuario?[0m    ?[90m# steps.TestSteps.CerarSesionUsuario()?[0m
+
+    Escenario Exitoso, se adjunta la Imagen en el reporte
+
+
+    Embedding Screenshot of the success [image/png 166046 bytes]
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
