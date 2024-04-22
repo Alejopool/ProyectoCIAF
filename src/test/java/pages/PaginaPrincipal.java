@@ -11,11 +11,12 @@ public class PaginaPrincipal extends BasePage {
     private String ClickIngresar = "//input[@value='Ingresar']";
 
     // Validar Faltas
+    private String IngresarDashboard = "//p[normalize-space()='Dashboard']";
     private String FaltasReportadas = "//small[normalize-space()='Faltas']";
     private String CerrarTableroFaltas = "//div[@id='myModalFaltas']//button[@type='button'][normalize-space()='Cancelar']";
 
     // Validar Programa de Formacion
-    private String ProgramaFormacion = "/html[1]/body[1]/div[1]/aside[1]/div[1]/div[4]/div[1]/div[1]/nav[1]/ul[1]/li[1]/a[1]";
+    private String ProgramaFormacion = "/html[1]/body[1]/div[1]/aside[1]/div[1]/div[4]/div[1]/div[1]/nav[1]/ul[1]/li[3]/a[1]";
     private String ClickProgramaFormacion = "//*[@id=\"contenido\"]/li/a/span";
 
     // Buscar Materia y cerrar Sesion
@@ -34,9 +35,9 @@ public class PaginaPrincipal extends BasePage {
         write(UsuarioLogin, "ja.lopez20@ciaf.edu.co");
         write(ContrasenaLogin, "");
         clickElement(ListaSelectDropdown);
-        CapturaPantalla();
         selectFromDropdownByValue(ListaSelectDropdown, "Estudiante");
-
+        sleep5seconds();
+        CapturaPantalla();
         clickElement(ClickIngresar);
 
     }
@@ -46,13 +47,17 @@ public class PaginaPrincipal extends BasePage {
     }
 
     public void ValidacionFaltas() {
+        clickElement(IngresarDashboard);
         clickElement(FaltasReportadas);
         sleep10seconds();
+
         clickElement(CerrarTableroFaltas);
+        CapturaPantalla();
     }
 
     public void IngresarProgramaFormacion() {
         clickElement(ProgramaFormacion);
+        CapturaPantalla();
         clickElement(ClickProgramaFormacion);
 
     }
@@ -64,8 +69,10 @@ public class PaginaPrincipal extends BasePage {
 
     public void BuscarMateria() {
         write(InputBuscar, "Yanci Viviana");
+        CapturaPantalla();
         sleep30seconds();
         clickElement(BotonCerrarSesion);
+        CapturaPantalla();
     }
 
 }

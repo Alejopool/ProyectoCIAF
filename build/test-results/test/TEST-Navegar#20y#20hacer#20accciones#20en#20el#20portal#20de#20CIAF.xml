@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Navegar y hacer accciones en el portal de CIAF" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-04T18:05:28" hostname="jairolopez-HP-Laptop-14-cf2xxx" time="97.812">
+<testsuite name="Navegar y hacer accciones en el portal de CIAF" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-04-22T15:13:26" hostname="jairolopez-HP-Laptop-14-cf2xxx" time="158.61">
   <properties/>
-  <testcase name="Navegar al portal de la CIAF" classname="Navegar y hacer accciones en el portal de CIAF" time="97.812"/>
+  <testcase name="Navegar al portal de la CIAF" classname="Navegar y hacer accciones en el portal de CIAF" time="89.494"/>
+  <testcase name="Ingresar a los diferentes campos del portal CIAF DIGITAL" classname="Navegar y hacer accciones en el portal de CIAF" time="69.116"/>
   <system-out><![CDATA[
-Scenario Outline: Navegar al portal de la CIAF      ?[90m# src/test/resources/Features/FrameworkAuto.feature:6?[0m
+@BuscarProfe
+Scenario Outline: Navegar al portal de la CIAF      ?[90m# src/test/resources/Features/FrameworkAuto.feature:7?[0m
   ?[32mGiven ?[0m?[32mNavegar al portal https://www.ciaf.digital/?[0m ?[90m# steps.TestSteps.IngresarUrlHacerLogin()?[0m
   ?[32mWhen ?[0m?[32mValidar la Lista de Roles?[0m                    ?[90m# steps.TestSteps.validateCheckoutPlans()?[0m
   ?[32mAnd ?[0m?[32mIngresar a Faltas de Asistencia?[0m               ?[90m# steps.TestSteps.RevisarAsistencia()?[0m
@@ -13,7 +15,19 @@ Scenario Outline: Navegar al portal de la CIAF      ?[90m# src/test/resources/Fe
     Escenario Exitoso, se adjunta la Imagen en el reporte
 
 
-    Embedding Screenshot of the success [image/png 166046 bytes]
+    Embedding Screenshot of the success [image/png 66524 bytes]
+
+
+@TourCiafDigital
+Scenario: Ingresar a los diferentes campos del portal CIAF DIGITAL ?[90m# src/test/resources/Features/FrameworkAuto.feature:16?[0m
+  ?[32mGiven ?[0m?[32mNavegar al portal https://www.ciaf.digital/?[0m                ?[90m# steps.TestSteps.IngresarUrlHacerLogin()?[0m
+  ?[32mWhen ?[0m?[32mValidar la Lista de Roles?[0m                                   ?[90m# steps.TestSteps.validateCheckoutPlans()?[0m
+  ?[32mAnd ?[0m?[32mIngresar y navegar a las diferentes Opciones?[0m                 ?[90m# steps.TestSteps.NavegarOpciones()?[0m
+
+    Escenario Exitoso, se adjunta la Imagen en el reporte
+
+
+    Embedding Screenshot of the success [image/png 230094 bytes]
 
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

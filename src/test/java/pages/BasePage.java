@@ -81,6 +81,7 @@ public class BasePage {
     // Este metodo realiza click en los botones o donde querramos presionar click
     public void clickElement(String locator) {
         Find(locator).click();
+
     }
 
     // Este metodo funciona para escribir en un elemento
@@ -94,6 +95,7 @@ public class BasePage {
     public void selectFromDropdownByValue(String Locator, String Value) {
         Select dropdown = new Select(Find(Locator));
         dropdown.selectByValue(Value);
+
     }
 
     // Validar Assertion de la lista de Roles
@@ -123,6 +125,15 @@ public class BasePage {
         try {
             // Espera 30 segundos antes de hacer clic en el botón de inicio de sesión
             TimeUnit.SECONDS.sleep(30);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    public void sleep5seconds() {
+        try {
+            // Espera 5 segundos antes de hacer clic en el botón de inicio de sesión
+            TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }

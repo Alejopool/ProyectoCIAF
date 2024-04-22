@@ -5,10 +5,12 @@ import java.util.List;
 import org.testng.Assert;
 import io.cucumber.java.en.*;
 import pages.PaginaPrincipal;
+import pages.TourNavegation;
 
 public class TestSteps {
 
     PaginaPrincipal landingPage = new PaginaPrincipal();
+    TourNavegation TourCiaf = new TourNavegation();
 
     @Given("^Navegar al portal https://www.ciaf.digital/?")
     public void IngresarUrlHacerLogin() {
@@ -42,6 +44,12 @@ public class TestSteps {
     @Then("^Buscar Materia y Cerrar Sesion de usuario?")
     public void CerarSesionUsuario() {
         landingPage.BuscarMateria();
+    }
+
+    @And("^Ingresar y navegar a las diferentes Opciones?")
+    public void NavegarOpciones() {
+        TourCiaf.NavegarPorOpciones();
+        TourCiaf.CerrarSesion();
     }
 
 }
